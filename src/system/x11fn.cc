@@ -1,12 +1,12 @@
 #include <node_api.h>
-// #include <X11/Xlib.h>
-// #include <X11/keysym.h>
-// #include <X11/extensions/XTest.h>
-// #include <unistd.h>
+ #include <X11/Xlib.h>
+ #include <X11/keysym.h>
+ #include <X11/extensions/XTest.h>
+ #include <unistd.h>
 #include <cstdio>
 #include <thread>
 #include <vector>
-#include "main.h"
+#include "../main.h"
 
 // This file is not finished.
 
@@ -48,12 +48,10 @@ bool f_set_cursor_position(int x, int y)
     {
         return false;
     }
-    int x = 500;
-    int y = 500;
     XWarpPointer(display, None, DefaultRootWindow(display), 0, 0, 0, 0, x, y);
 
-    XTestFakeButtonEvent(display, Button1, true, CurrentTime);
-    XTestFakeButtonEvent(display, Button1, false, CurrentTime);
+//    XTestFakeButtonEvent(display, Button1, true, CurrentTime);
+//    XTestFakeButtonEvent(display, Button1, false, CurrentTime);
 
     XFlush(display);
     XCloseDisplay(display);

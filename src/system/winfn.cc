@@ -4,9 +4,7 @@
 #include <thread>
 #include <vector>
 #include "../main.h"
-
-#define IDD_CUSTOM_DIALOG 101
-#define IDC_EDIT 102
+#include "winfn.h"
 
 #define INPUT_SEND(input)                             \
     if (SendInput(1, &(input), sizeof(INPUT)) != 1)   \
